@@ -71,6 +71,63 @@
   &__item + .nav-secondary__item{
     padding-left: 40px;
   }
+
+  &__item {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  &__link--drop::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-image: url("../images/icons/dropdown-arrow.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s;
+  }
+
+  &__list--dropdown {
+    display: block;
+    position: absolute;
+    min-width: 180px;
+    background-color: $bg_menu;
+    right: 0;
+    top: 100%;
+    padding: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.2);
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mobile-back {
+  display: none;
+}
+
+.dropdown-list {
+  &__item {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px){
+  .nav-secondary {
+    &__item:hover .nav-secondary__list--dropdown {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.7s;
+    }
+
+    &__link--drop:hover::after {
+      transform: rotate(180deg);
+      transition: all 0.3s;
+    }
+  }
 }
 
 @import "media";
