@@ -1,0 +1,29 @@
+$accent: #48ac32;
+$default: #202120;
+$def_grey: #7e827e;
+$bg_def: #e5e5e5;
+$bg: #f4f6f7;
+$bg_menu: #ffffff;
+
+%montserrat-400{
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%montserrat-500{
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-weight: 500;
+}
+
+%montserrat-600{
+  font-family: 'Montserrat-SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+%btn{
+  padding: 12px 20px;
+  color: $bg_def;
+  border-radius: 25px;
+  background-color: $accent;
+  cursor: pointer;
+}
