@@ -3,6 +3,76 @@
 @import "reset";
 @import "global";
 
+.header__menu {
+ 
+}
 
+.menu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: $default;
+  background-color: $bg_menu;
+  z-index: 3;
+}
+
+.nav-main {
+  &__list {
+    display: flex;
+    align-items: cnter;
+    justify-content: left;
+    padding-left: 125px;
+  }
+
+  &__item + .nav-main__item{
+    padding-left: 35px;
+  }
+
+  &__link {
+    @extend %montserrat-600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $def_grey;
+    text-transform: uppercase;
+    &:hover {
+      color: $default;
+    }
+  }
+
+  &__link--active {
+    color: $default
+  }
+}
+
+.nav-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @extend %montserrat-500;
+  font-size: 14px;
+  line-height: 17px;
+  &__cabinet-link{
+    @extend %btn;
+  }
+  &__cabinet-link:first-letter{
+    text-transform: capitalize;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  &__item + .nav-secondary__item{
+    padding-left: 40px;
+  }
+}
 
 @import "media";
