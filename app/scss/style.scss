@@ -150,6 +150,13 @@
     }
   }
 
+  @media (max-width: 1200px){
+    .media{
+      display: none;
+      padding: 0;
+    }
+  }
+
 }
 
 @import "media";
