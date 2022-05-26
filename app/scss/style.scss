@@ -12,6 +12,7 @@
   left: 0;
   color: $default;
   background-color: $bg_menu;
+  box-shadow: 0 0 10px 0 rgba(0,0,0, 0.2);
   z-index: 3;
 }
 
@@ -77,6 +78,13 @@
     padding: 20px 0;
   }
 
+  &__link {
+    @extend %montserrat-500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $default;
+  }
+
   &__link--drop::after {
     content: "";
     width: 10px;
@@ -93,15 +101,16 @@
   &__list--dropdown {
     display: block;
     position: absolute;
-    min-width: 180px;
+    width: 240px;
     background-color: $bg_menu;
-    right: 0;
+    left: calc(50% - 6rem);
     top: 100%;
-    padding: 10px;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.2);
+    padding: 20px 20px 25px 20px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.2);
     transition: all 0.3s;
     opacity: 0;
     visibility: hidden;
+    border-radius: 0 0 20px 20px;
   }
 }
 
@@ -110,8 +119,18 @@
 }
 
 .dropdown-list {
-  &__item {
-    margin-bottom: 10px;
+  &__item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__link {
+    @extend %montserrat-500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $default;
+  }
+  &__link:hover {
+    color: $accent;
   }
 }
 
@@ -123,11 +142,14 @@
       transition: all 0.7s;
     }
 
+
     &__link--drop:hover::after {
+      color: $accent;
       transform: rotate(180deg);
       transition: all 0.3s;
     }
   }
+
 }
 
 @import "media";
