@@ -4,7 +4,7 @@
 @import "global";
 
 
-
+/* menu */
 .menu {
   position: fixed;
   width: 100%;
@@ -133,6 +133,102 @@
     color: $accent;
   }
 }
+
+/* footer */
+.footer {
+  position: relative;
+  background-color: $footer;
+  color: $footer_grey;
+}
+
+
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 0x;
+  right: 0;
+  bottom: 70px;
+  height: 1px;
+  width: 100%;
+  background-color:#323538;
+}
+
+.footer-top {
+  &__wrap {
+    display: flex;
+
+    justify-content: space-between;
+    padding-top: 100px;
+    margin-bottom: 50px;
+  }
+  &__contacts {
+    max-width: 255px;
+  }
+  &__title {
+    @extend %montserrat-500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+  }
+  &__title--nav{
+    margin-bottom: 30px;
+  }
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 55px;
+  }
+  &__items:not(:last-child){
+    margin-right: 50px;
+  }
+  &__item{
+    color: $bg;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  &__adress{
+    margin-bottom: 30px;
+  }
+  &__schedule{
+    margin-bottom: 30px;
+  }
+  &__time{
+    display: block;
+  }
+  &__call{
+    margin-bottom: 30px;
+  }
+  &__phone{
+    display: block;
+  }
+}
+
+.logo-footer{
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+
+
+// .footer-top__items:not(:last-child) {
+//   margin-right: 50px;
+// }
+
+.footer-bootom {
+  height: 70px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.footer-bootom p {
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+
 
 @media (min-width: 769px){
   .nav-secondary {
