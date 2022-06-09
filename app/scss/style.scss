@@ -16,6 +16,10 @@
   z-index: 3;
 }
 
+.menu__burger {
+  display: none;
+}
+
 .nav-main {
   &__list {
     display: flex;
@@ -156,31 +160,62 @@
 .footer-top {
   &__wrap {
     display: flex;
-
     justify-content: space-between;
     padding-top: 100px;
     margin-bottom: 50px;
   }
   &__contacts {
-    max-width: 255px;
+    width: 255px;
+
   }
+
   &__title {
-    @extend %montserrat-500;
+    @extend %montserrat-400;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 25px;
     text-transform: uppercase;
   }
+
+  &__title--nav {
+    @extend %montserrat-500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+  &__adress,
+  &__schedule,
+  &__call  {
+    @extend %montserrat-400;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  &__list,
+  &__business-link{
+    @extend %montserrat-400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &__sertificate {
+    @extend %montserrat-400;
+    font-size: 12px;
+    line-height: 21px;
+  }
+
   &__title--nav{
     margin-bottom: 30px;
   }
   &__nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 55px;
+    margin-bottom: 85px;
   }
-  &__items:not(:last-child){
-    margin-right: 50px;
+
+  &__items {
+    width: 220px;
+  }
+
+  &__items {
+    padding-left: 50px;
   }
   &__item{
     color: $bg;
@@ -188,43 +223,35 @@
   &__item:not(:last-child) {
     margin-bottom: 25px;
   }
-  &__adress{
+  &__adress,
+  &__schedule,
+  &__call  {
     margin-bottom: 30px;
   }
-  &__schedule{
-    margin-bottom: 30px;
-  }
-  &__time{
+  
+  &__time,
+  &__phone  {
     display: block;
   }
-  &__call{
-    margin-bottom: 30px;
-  }
-  &__phone{
-    display: block;
+  &__business-link {
+    padding-left: 50px;
   }
 }
 
 .logo-footer{
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-
-
-
-// .footer-top__items:not(:last-child) {
-//   margin-right: 50px;
-// }
 
 .footer-bootom {
   height: 70px;
-  font-size: 12px;
-  line-height: 14px;
 }
 
 .footer-bootom p {
   padding-top: 30px;
   text-align: center;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 
