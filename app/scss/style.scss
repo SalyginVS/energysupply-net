@@ -12,12 +12,8 @@
   left: 0;
   color: $default;
   background-color: $bg_menu;
-  box-shadow: 0 0 10px 0 rgba(0,0,0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: 3;
-}
-
-.menu__burger {
-  display: none;
 }
 
 .nav-main {
@@ -28,7 +24,7 @@
     padding-left: 125px;
   }
 
-  &__item + .nav-main__item{
+  &__item+.nav-main__item {
     padding-left: 35px;
   }
 
@@ -38,6 +34,7 @@
     line-height: 15px;
     color: $def_grey;
     text-transform: uppercase;
+
     &:hover {
       color: $default;
     }
@@ -55,10 +52,12 @@
   @extend %montserrat-500;
   font-size: 14px;
   line-height: 17px;
-  &__cabinet-link{
+
+  &__cabinet-link {
     @extend %btn;
   }
-  &__cabinet-link:first-letter{
+
+  &__cabinet-link:first-letter {
     text-transform: capitalize;
   }
 
@@ -73,7 +72,7 @@
     padding-left: 30px;
   }
 
-  &__item + .nav-secondary__item{
+  &__item+.nav-secondary__item {
     padding-left: 40px;
   }
 
@@ -110,7 +109,7 @@
     left: calc(50% - 6rem);
     top: 100%;
     padding: 20px 20px 25px 20px;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.2);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
     opacity: 0;
     visibility: hidden;
@@ -133,28 +132,106 @@
     line-height: 17px;
     color: $default;
   }
+
   &__link:hover {
     color: $accent;
   }
 }
 
-/* footer */
+/***** burger ******/
+.burger {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  display: none;
+}
+
+.burger::after,
+.burger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $footer;
+}
+
+.burger::after {
+  top:auto;
+  bottom: 0;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: $footer;
+}
+
+@media(max-width: 992px) {
+  .nav-secondary__buttons {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .mobile-back{
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-width: 400px;
+    width: 80%;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 5px 0 15px -5px rgba(0, 0, 0, 0.8);
+    background-color: $bg_menu;
+  }
+  .nav-secondary__list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    padding-top: 10%;
+    position: relative;
+  }
+  .nav-secondary__item {
+    margin-left: 0 important;
+    font-size: 20px;
+    width: 100%;
+    padding: 0;
+    position: static;
+  }
+}
+
+
+/***** footer ******/
 .footer {
   position: relative;
   background-color: $footer;
   color: $footer_grey;
 }
 
-
 .footer::after {
   content: "";
   position: absolute;
-  left: 0x;
+  left: 0;
   right: 0;
   bottom: 70px;
   height: 1px;
   width: 100%;
-  background-color:#323538;
+  background-color: #323538;
 }
 
 .footer-top {
@@ -164,6 +241,7 @@
     padding-top: 100px;
     margin-bottom: 50px;
   }
+
   &__contacts {
     width: 255px;
 
@@ -182,28 +260,32 @@
     line-height: 14px;
     text-transform: uppercase;
   }
+
   &__adress,
   &__schedule,
-  &__call  {
+  &__call {
     @extend %montserrat-400;
     font-size: 14px;
     line-height: 25px;
   }
+
   &__list,
-  &__business-link{
+  &__business-link {
     @extend %montserrat-400;
     font-size: 14px;
     line-height: 17px;
   }
+
   &__sertificate {
     @extend %montserrat-400;
     font-size: 12px;
     line-height: 21px;
   }
 
-  &__title--nav{
+  &__title--nav {
     margin-bottom: 30px;
   }
+
   &__nav {
     display: flex;
     flex-wrap: wrap;
@@ -211,40 +293,45 @@
   }
 
   &__items {
+    // flex-grow: 1;
     width: 220px;
   }
 
   &__items {
     padding-left: 50px;
   }
-  &__item{
+
+  &__item {
     color: $bg;
   }
+
   &__item:not(:last-child) {
     margin-bottom: 25px;
   }
+
   &__adress,
   &__schedule,
-  &__call  {
+  &__call {
     margin-bottom: 30px;
   }
-  
+
   &__time,
-  &__phone  {
+  &__phone {
     display: block;
   }
+
   &__business-link {
     padding-left: 50px;
   }
 }
 
-.logo-footer{
+.logo-footer {
   display: inline-block;
   margin-bottom: 20px;
 }
 
 .footer-bootom {
-  height: 70px;
+  padding: 30px 0;
 }
 
 .footer-bootom p {
@@ -257,7 +344,7 @@
 
 
 
-@media (min-width: 769px){
+@media (min-width: 769px) {
   .nav-secondary {
     &__item:hover .nav-secondary__list--dropdown {
       visibility: visible;
@@ -273,8 +360,8 @@
     }
   }
 
-  @media (max-width: 1200px){
-    .media{
+  @media (max-width: 1200px) {
+    .media {
       display: none;
       padding: 0;
     }
