@@ -28,4 +28,7 @@ $footer_grey: #8a8c8e;
   border-radius: 25px;
   background-color: $accent;
   cursor: pointer;
+  @extend %montserrat-500;
+  font-size: 14px;
+  line-height: 17px;
 }
