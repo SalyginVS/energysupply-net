@@ -255,12 +255,14 @@
 //     position: static;
 //   }
 // }
+
 /*** meet-needs section***/
 .meet-needs{
   &__content{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row-reverse;
   }
   &__info{
     max-width: 640px;
